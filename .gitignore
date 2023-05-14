@@ -6,7 +6,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-/src/NeuralNetworkManager.RestApi/Models.*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
