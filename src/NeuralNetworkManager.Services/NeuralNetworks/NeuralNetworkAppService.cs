@@ -53,4 +53,11 @@ public class NeuralNetworkAppService : NeuralNetworkService
     {
         _networkRepository.Remove(id);
     }
+
+    public async Task<GetModelDto> Get(string id)
+    {
+        var model = await _networkRepository.Load(id);
+
+        return new GetModelDto(model);
+    }
 }

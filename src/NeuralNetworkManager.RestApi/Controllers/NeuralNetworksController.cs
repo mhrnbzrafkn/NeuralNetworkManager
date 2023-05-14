@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using NeuralNetworkManager.Services.NeuralNetworks.Contracts;
 using NeuralNetworkManager.Services.NeuralNetworks.Contracts.Dtos;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace NeuralNetworkManager.RestApi.Controllers
@@ -27,6 +28,12 @@ namespace NeuralNetworkManager.RestApi.Controllers
         public async Task<List<GetAllModelsDto>> GetAll()
         {
             return await _neuralNetworkService.GetAll();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<GetModelDto> Get(string id)
+        {
+            return await _neuralNetworkService.Get(id);
         }
 
         [HttpPost("{id}/predict")]
